@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 anyhow = { version = "1.0.70", features = ["backtrace"] }
+once_cell = "1.17.1"
