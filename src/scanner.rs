@@ -27,9 +27,9 @@ const KEYWORDS: Lazy<HashMap<&str, TokenType>> = Lazy::new(|| {
 #[allow(dead_code)]
 #[derive(Debug)]
 pub struct Token {
-    line: i32,
-    r#type: TokenType,
-    text: String,
+    pub line: i32,
+    pub r#type: TokenType,
+    pub lexeme: String,
 }
 
 struct Position {
@@ -124,7 +124,7 @@ impl Scanner<'_> {
         self.tokens.push(Token {
             line: self.position.line,
             r#type: TokenType::EOF,
-            text: String::new(),
+            lexeme: String::new(),
         });
 
         Ok(&self.tokens)
@@ -162,7 +162,7 @@ impl Scanner<'_> {
         self.tokens.push(Token {
             line: self.position.line,
             r#type: token_type,
-            text,
+            lexeme: text,
         });
     }
 

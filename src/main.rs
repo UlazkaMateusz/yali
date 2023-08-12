@@ -6,7 +6,9 @@ use std::{
     process::exit,
 };
 
+mod expression;
 mod scanner;
+mod visitors;
 
 fn main() -> Result<()> {
     // Get args
